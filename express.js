@@ -10,9 +10,10 @@ const __filename = fileURLToPath(import.meta.url); // get the resolved path to t
 const __dirname = path.dirname(__filename); // get the name of the directory
 
 app.use(express.static('public'))  
+app.use(express.json());
 
 
-/app.use("/Controllers",express.static(path.join(__dirname, '/Controllers')))
+app.use("/Controllers",express.static(path.join(__dirname, '/Controllers')))
 const PORT=3000;
 
 app.get('/',(req,res)=>{
